@@ -4,8 +4,13 @@ import static Jflextest.Token.*;
 %class NewLexer
 %type Token
 
-num = [0-9]
-twonum = {num}+{num}
+num = [0-9]{2}
+guion= "-"
+
+tel = (({num}+{guion}){3})+{num}
+
+
+
 
 white=[ \t\r\n]+
 
@@ -18,6 +23,6 @@ white=[ \t\r\n]+
 {white} {/*Ignore*/}
 "//" {/*Ignore*/}
 
-{twonum} {lexeme =yytext(); return num;}
+{tel} {lexeme =yytext(); return num;}
 
 . {return ERROR;}

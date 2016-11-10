@@ -33,8 +33,8 @@ class NewLexer {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\2\1\2\1\4\1\4\1\2\22\0\1\2\16\0\1\3"+
-    "\12\1\113\0\1\4\u1fa2\0\1\4\1\4\udfd6\0";
+    "\11\0\1\3\1\3\1\5\1\5\1\3\22\0\1\3\14\0\1\2"+
+    "\1\0\1\4\12\1\113\0\1\5\u1fa2\0\1\5\1\5\udfd6\0";
 
   /** 
    * Translates characters to character classes
@@ -47,10 +47,10 @@ class NewLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\2\1\1\2\1\1\1\3\1\2";
+    "\1\0\2\1\1\2\1\1\1\0\1\2\11\0\1\3";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[7];
+    int [] result = new int[17];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -75,10 +75,12 @@ class NewLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\5\0\12\0\17\0\24\0\12\0\5";
+    "\0\0\0\6\0\14\0\22\0\30\0\36\0\6\0\14"+
+    "\0\44\0\52\0\60\0\66\0\74\0\102\0\110\0\116"+
+    "\0\36";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[7];
+    int [] result = new int[17];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -101,11 +103,14 @@ class NewLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\7\0\1\6\5\0\1\4"+
-    "\5\0\1\7\1\0";
+    "\1\2\1\3\1\2\1\4\1\5\10\0\1\6\7\0"+
+    "\1\4\6\0\1\7\2\0\1\10\1\11\4\0\1\12"+
+    "\5\0\1\13\5\0\1\12\1\14\4\0\1\15\5\0"+
+    "\1\16\5\0\1\15\1\17\4\0\1\20\5\0\1\21"+
+    "\4\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[25];
+    int [] result = new int[84];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -143,10 +148,10 @@ class NewLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\4\1\1\11";
+    "\1\0\1\11\3\1\1\0\1\11\11\0\1\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[7];
+    int [] result = new int[17];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -248,7 +253,7 @@ class NewLexer {
     char [] map = new char[0x10000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 34) {
+    while (i < 38) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
