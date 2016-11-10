@@ -26,10 +26,11 @@ public class TestClass {
 				 break;
 			 }
 			 
+			 
+			 System.out.println("this i sthe token"+lexer.lexeme);
+			 
 			 //igual, suma, variable, numero, multiplicacion, resta, division, ERROR
 			 switch(token){
-			
-			     
 				 case num: 
 					 resultados+="Palabra reservada de calis "+lexer.lexeme;
 					break;
