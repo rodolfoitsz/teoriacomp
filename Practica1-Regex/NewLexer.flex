@@ -46,9 +46,9 @@ correo={letCorr}{lets}"@"{dominio}
 
 /* patrones para youtube */
 dominioYou ="www.youtube.com/watch?v="
-eleDomYou=[a-zA-Z0-9]{11}
+eleDomYou=[a-zA-Z0-9"_""-""%""?"]+
 
-youtube={dominioYou}{eleDomYou}
+youtube={protocolo}{dominioYou}{eleDomYou}
 
 
 
