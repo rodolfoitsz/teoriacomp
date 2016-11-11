@@ -47,6 +47,12 @@ public class TestClass {
 
 		String content = new String(Files.readAllBytes(path), charset);
 		
+		int estnombre=0;
+		int esttellocal=0;
+		int esttelcel=0;
+		int esturl=0;
+		int estcorreo=0;
+		int estyoutube=0;
 		 
 		 while(true){
 			 Token token = lexer.yylex();
@@ -73,7 +79,7 @@ public class TestClass {
 				 
 				 System.out.println(nombre);
 				 
-				 
+				  estnombre++;
 				 //resultados+="Palabra reservada de nombre "+lexer.lexeme;
 				 
 				break;
@@ -88,7 +94,9 @@ public class TestClass {
 				 content = content.replace(telLocal.trim(), "<font color='green'>"+telLocal+"</font>");
 				 Files.write(path, content.getBytes(charset));
 				 
-				 
+			
+					 esttellocal++;
+					
 				// resultados+="Palabra reservada de telLocal "+lexer.lexeme;
 				 
 				break;
@@ -101,6 +109,8 @@ public class TestClass {
 				 Files.write(path, content.getBytes(charset));
 				 
 				 
+					 esttelcel++;
+					
 				// resultados+="Palabra reservada de telCel "+lexer.lexeme;
 			
 				break;
@@ -112,6 +122,10 @@ public class TestClass {
 				 content = content.replaceAll(url.trim(), "<a  href='"+url+"'>"+url+"</a>");
 				 Files.write(path, content.getBytes(charset));
 				 
+				 
+				
+					 esturl++;
+				
 				// resultados+="Palabra reservada de url "+lexer.lexeme;
 			
 				break;
@@ -124,7 +138,9 @@ public class TestClass {
 				 content = content.replaceAll(correo.trim(), "<a  href='mailto:"+correo+"'>"+correo+"</a>");
 				 Files.write(path, content.getBytes(charset));
 				 
-				 
+				
+					estcorreo++;
+				
 				// resultados+="Palabra reservada de correo "+lexer.lexeme;
 			
 				break;
@@ -139,6 +155,10 @@ public class TestClass {
 					 content = content.replace(youtube.trim(), "<iframe width='420' height='315' src="+youtube+"'> </iframe> " );
 					 Files.write(path, content.getBytes(charset));
 					 
+					 
+					
+						estyoutube++;
+					 
 					// resultados+="Palabra reservada de youtube "+lexer.lexeme;
 				
 					break;
@@ -151,9 +171,21 @@ public class TestClass {
 				 }
 			 }
 		 
-		// JOptionPane.showMessageDialog(null, resultados);
+		 
+		
+		 
+		 String estadisticas = "esto es el total de nombres "+estnombre+"\n"+
+				                "esto es el total de telefono Local "+esttellocal+"\n"+
+				                "esto es el total de telefono Celular "+esttelcel+"\n"+
+				                "esto es el total de telefono URL "+esturl+"\n"+
+				                "esto es el total de telefono Correo "+estcorreo+"\n"+
+				                "esto es el total de telefono Youtube "+estyoutube+"\n";
+		 
+		JOptionPane.showMessageDialog(null,estadisticas);
 			 
 		 }
+	
+	
 		 
 		 
 }

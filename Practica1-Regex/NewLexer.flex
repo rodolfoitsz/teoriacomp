@@ -10,7 +10,7 @@ lmin= [a-z]+
 guiBajo= "_"
 conector= [a-z]{1,3}
 
-nombre = {lmay}{lmin}{guiBajo} ((({conector}+{guiBajo})+)?) ((({lmay}{lmin}{guiBajo})?){1,4}) ((({conector}+{guiBajo})+)?) ({lmay}{lmin})
+nombre = ({lmay}{lmin}{guiBajo}){1} ((({conector}+{guiBajo})+)?) ((({lmay}{lmin}{guiBajo}){1,4})?) ((({conector}+{guiBajo})+)?) ({lmay}{lmin}){1}
 
 
 /* patrones para telefonos */
